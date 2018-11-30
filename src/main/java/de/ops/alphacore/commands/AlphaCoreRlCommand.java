@@ -15,20 +15,18 @@ import org.bukkit.entity.Player;
 public class AlphaCoreRlCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         ConfigManager cm = new ConfigManager();
-        Config config = new Config();
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("alphacore.rl")) {
                player.sendMessage(Main.getPlugin().getPrefix() + "§cReloading...");
-                config.reload();
                 RankSystem.setPrefix();
                 player.sendMessage(Main.getPlugin().getPrefix() + "aReload complete");
             }
         }else{
             System.out.println(Main.getPlugin().getconsolePrefix() + "Reloading");
-            config.reload();
+
             RankSystem.setPrefix();
-            System.out.println("Reload complete");
+            System.out.println(Main.getPlugin().getconsolePrefix() + "Reload complete");
         }
         return false;
     }

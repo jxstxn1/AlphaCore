@@ -2,6 +2,7 @@ package de.ops.alphacore.main;
 
 import javax.net.ssl.SNIServerName;
 
+import de.ops.alphacore.MySQL.MySQL;
 import de.ops.alphacore.commands.*;
 import de.ops.alphacore.listener.PingListener;
 import de.ops.alphacore.log.SchemRankSystem;
@@ -63,7 +64,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-       Bukkit.getServer().getConsoleSender().sendMessage(consolePrefix + "§620% - §a Getting Systemproperties");
+        Bukkit.getServer().getConsoleSender().sendMessage(consolePrefix + "§620% - §a Getting Systemproperties");
         System.out.println(" ");
         if (System.getProperty("os.name").contains("Linux")) {
             Bukkit.getConsoleSender().sendMessage(consolePrefix + "§dUsing §aAlphaCore§d-Server-Edition ");
@@ -72,7 +73,10 @@ public class Main extends JavaPlugin {
         }
 
         System.out.println(" ");
-
+//
+        MySQL.connect();
+        MySQL.createTable();
+        //
         plugin = this;
         Bukkit.getServer().getConsoleSender().sendMessage(consolePrefix + "§640% - §aLoading Commands");
 
@@ -87,7 +91,12 @@ public class Main extends JavaPlugin {
         getCommand("money").setExecutor(new Money());
         getCommand("setmoney").setExecutor(new Setmoney());
         getCommand("language").setExecutor(new LanguageCommand());
-       getCommand("arl").setExecutor(new AlphaCoreRlCommand());
+        getCommand("arl").setExecutor(new AlphaCoreRlCommand());
+        BanCommands banCMD = new BanCommands(this);
+        getCommand("ban").setExecutor(banCMD);
+        getCommand("tempban").setExecutor(banCMD);
+        getCommand("check").setExecutor(banCMD);
+        getCommand("unban").setExecutor(banCMD);
         //
 
 
@@ -110,7 +119,10 @@ public class Main extends JavaPlugin {
 
 
     }
-
+@Override
+public void onDisable(){
+    MySQL.disconnect();
+}
 
     public Main() {
 

@@ -492,9 +492,7 @@ public class Config {
             return false;
         }
     }
-public Config(){
 
-}
     public void deleteConfig() {
         this.configFile.delete();
     }

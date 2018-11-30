@@ -56,7 +56,6 @@ public class RankListener implements Listener {
 
            cm.getPlayerData().setString(player.getUniqueId() + ".ip" , player.getAddress().getHostName());
        }else{
-          System.out.println("IP wurde als hash gespeichert.");
            cm.getPlayerData().setString(player.getUniqueId() + ".ip", HashFunctions.getHash(player.getAddress().getHostName().getBytes(), "SHA-512"));
        }
 
