@@ -262,6 +262,15 @@ public class ConfigManager {
 
         }
     }
+    //GM-Command
+
+    //Money-Command
+
+    //SetMoney-Command
+
+    //Web-PW-Command
+
+    //
 
 
 //LanguageCommand
@@ -306,4 +315,10 @@ getPlayerData().setString(uuid.toString() + ".language" , language);
     public Config getConfig() {
         return config;
     }
+
+public String getPlayerLanguage(UUID uuid){
+        return getPlayerData().getString(uuid.toString() + ".language");
+}
+
+
 }
