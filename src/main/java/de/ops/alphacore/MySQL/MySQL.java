@@ -77,7 +77,7 @@ public class MySQL {
         if(isConnected()) {
             try {
                 con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS BannedPlayers(Spielername VARCHAR(100), UUID VARCHAR(100), Ende VARCHAR(100), Grund VARCHAR");
-                con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS WarshipTeams(Teamname VARCHAR(100), Passwort VARCHAR(100) , Leader VARCHAR(100), Member VARCHAR(100)");
+               
             } catch (SQLException e) {
                 e.printStackTrace();
             }
