@@ -277,7 +277,35 @@ public class ConfigManager {
 public void setPlayerLanguage(UUID uuid, String language){
 getPlayerData().setString(uuid.toString() + ".language" , language);
 }
+public String getYourLang(){
+    String s = config.getString("Language");
+    if ("ger".equalsIgnoreCase(s)) {
 
+        return ger.getString("lang.yourlang");
+
+    } else if ("eng".equalsIgnoreCase(s)) {
+        return eng.getString("lang.yourlang");
+
+    } else if ("fr".equalsIgnoreCase(s)) {
+        return fr.getString("lang,yourlang");
+
+    } else if ("hu".equalsIgnoreCase(s)) {
+        return hu.getString("lang.yourlang");
+
+    } else if ("nl".equalsIgnoreCase(s)) {
+        return nl.getString("lang.yourlang");
+
+    } else if ("ru".equalsIgnoreCase(s)) {
+        return ru.getString("lang.yourlang");
+
+    } else if ("tu".equalsIgnoreCase(s)) {
+        return tu.getString("lang.yourlang");
+
+    } else {
+        return eng.getString("lang.yourlang");
+
+    }
+}
 //Getter
 
     public Config getPlayerData() {

@@ -21,14 +21,16 @@ public class LanguageCommand implements CommandExecutor {
             if (player.hasPermission("alphacore.setlanguage")) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("ger") || args[0].equalsIgnoreCase("eng") || args[0].equalsIgnoreCase("fr") || args[0].equalsIgnoreCase("hu") || args[0].equalsIgnoreCase("nl") || args[0].equalsIgnoreCase("ru")|| args[0].equalsIgnoreCase("tu")) {
-                        player.sendMessage("Erfolg");
+                       cm.setPlayerLanguage(player.getUniqueId(), args[0]);
 
 
                     }else{
                         player.sendMessage(Main.getPlugin().getPrefix() + cm.getUsage() + ": §6/language <ger|eng|fr|hu|nl|ru|tu>");
                     }
-                } else {
-                    player.sendMessage(Main.getPlugin() + cm.getUsage());
+                } else if (args.length == 0) {
+                    player.sendMessage(Main.getPlugin().getPrefix() + cm.getYourLang() + "§7: §6" + cm.getPlayerLanguage(player.getUniqueId()));
+                }else{
+                    player.sendMessage(Main.getPlugin().getPrefix() + cm.getUsage());
                 }
             }else{
                 player.sendMessage(cm.getNoPerm());
