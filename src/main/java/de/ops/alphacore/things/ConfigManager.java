@@ -263,7 +263,9 @@ public class ConfigManager {
 
 
 //LanguageCommand
+public void setPlayerLanguage(String language){
 
+}
 
 //Getter
 
