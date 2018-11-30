@@ -1,0 +1,21 @@
+version: 1.0
+name: AlphaCore
+main: de.ops.alphacore.main.Main
+
+
+commands:
+  gm:
+  heal:
+  webpw:
+  login:
+  ban:
+  setrank:
+  seerank:
+  setspawn:
+  spawn:
+  money:
+  setmoney:
+  language:
+authors: [Justin, linksKeineMitte/Leonhard, Zeanon ]
+
+loadbefore: [WorldSystem]
