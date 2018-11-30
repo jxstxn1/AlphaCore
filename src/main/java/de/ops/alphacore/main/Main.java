@@ -84,7 +84,6 @@ public class Main extends JavaPlugin {
         getCommand("gm").setExecutor(new GMCommands());
         getCommand("webpw").setExecutor(new WebPWCommand());
         getCommand("login").setExecutor(new LogInCommand());
-        getCommand("ban").setExecutor(new BannCommand());
         getCommand("setrank").setExecutor(new RankCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
@@ -92,11 +91,10 @@ public class Main extends JavaPlugin {
         getCommand("setmoney").setExecutor(new Setmoney());
         getCommand("language").setExecutor(new LanguageCommand());
         getCommand("arl").setExecutor(new AlphaCoreRlCommand());
-        BanCommands banCMD = new BanCommands(this);
-        getCommand("ban").setExecutor(banCMD);
-        getCommand("tempban").setExecutor(banCMD);
-        getCommand("check").setExecutor(banCMD);
-        getCommand("unban").setExecutor(banCMD);
+        getCommand("ban").setExecutor(new BanCommands());
+        getCommand("tempban").setExecutor(new BanCommands());
+        getCommand("check").setExecutor(new BanCommands());
+        getCommand("unban").setExecutor(new BanCommands());
         //
 
 

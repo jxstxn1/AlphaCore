@@ -9,6 +9,9 @@ commands:
   webpw:
   login:
   ban:
+  tempban:
+  check:
+  unban:
   setrank:
   seerank:
   setspawn:

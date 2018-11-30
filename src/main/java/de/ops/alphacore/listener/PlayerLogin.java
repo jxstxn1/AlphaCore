@@ -5,12 +5,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
+import static de.ops.alphacore.BanManager.BanManager.getReason;
+import static de.ops.alphacore.BanManager.BanManager.getRemainingTime;
 //import static De.OpenSource.Action.BanManager.BanManager.getReason;
 //import static De.OpenSource.Action.BanManager.BanManager.getRemainingTime;
 
 public class PlayerLogin implements Listener {
-String getReason = "";
-String getRemainingTime = "";
+
     public void onPlayerLogin(PlayerLoginEvent e){
         Player p= e.getPlayer();
         if (BanManager.isBanned(p.getUniqueId().toString())) {
