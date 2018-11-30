@@ -3,6 +3,8 @@ package de.ops.alphacore.things;
 
 import de.ops.alphacore.main.Main;
 
+import java.util.UUID;
+
 
 public class ConfigManager {
 
@@ -263,8 +265,8 @@ public class ConfigManager {
 
 
 //LanguageCommand
-public void setPlayerLanguage(String language){
-
+public void setPlayerLanguage(UUID uuid, String language){
+getPlayerData().setString(uuid.toString() + ".language" , language);
 }
 
 //Getter
