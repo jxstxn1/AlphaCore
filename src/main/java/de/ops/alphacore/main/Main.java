@@ -87,6 +87,7 @@ public class Main extends JavaPlugin {
         getCommand("money").setExecutor(new Money());
         getCommand("setmoney").setExecutor(new Setmoney());
         getCommand("language").setExecutor(new LanguageCommand());
+       getCommand("arl").setExecutor(new AlphaCoreRlCommand());
         //
 
 

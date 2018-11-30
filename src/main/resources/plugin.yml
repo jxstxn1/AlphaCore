@@ -16,6 +16,7 @@ commands:
   money:
   setmoney:
   language:
+  arl:
 authors: [Justin, linksKeineMitte/Leonhard, Zeanon ]
 
 loadbefore: [WorldSystem]
