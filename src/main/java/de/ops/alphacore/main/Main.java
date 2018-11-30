@@ -59,7 +59,17 @@ public class Main extends JavaPlugin {
     private String version = "0.0.5.1.1";
     private String help = "§7Nutze §6/help§7  für Hilfe";
     private String serverName = "Test";
+    
+    //Command Registry (Erspart Arbeit ;) )
+    private void regCommands(){
+    BanCommands banCMD = new BanCommands(this);
+        getCommand("ban").setExecutor(banCMD);
+        getCommand("tempban").setExecutor(banCMD);
+        getCommand("check").setExecutor(banCMD);
+        getCommand("unban").setExecutor(banCMD);
+    //Fortlaufend so für alle Commands also als erstes Klasse und dann darunter die Commands, so musst du in die OnEnable nur "regCommands();"  rein machen.
 
+    }
     // OnEnable
 
     @Override
@@ -84,6 +94,7 @@ public class Main extends JavaPlugin {
         getCommand("gm").setExecutor(new GMCommands());
         getCommand("webpw").setExecutor(new WebPWCommand());
         getCommand("login").setExecutor(new LogInCommand());
+        getCommand("ban").setExecutor(new BannCommand());
         getCommand("setrank").setExecutor(new RankCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
@@ -91,10 +102,11 @@ public class Main extends JavaPlugin {
         getCommand("setmoney").setExecutor(new Setmoney());
         getCommand("language").setExecutor(new LanguageCommand());
         getCommand("arl").setExecutor(new AlphaCoreRlCommand());
-        getCommand("ban").setExecutor(new BanCommands());
-        getCommand("tempban").setExecutor(new BanCommands());
-        getCommand("check").setExecutor(new BanCommands());
-        getCommand("unban").setExecutor(new BanCommands());
+        BanCommands banCMD = new BanCommands(this);
+        getCommand("ban").setExecutor(banCMD);
+        getCommand("tempban").setExecutor(banCMD);
+        getCommand("check").setExecutor(banCMD);
+        getCommand("unban").setExecutor(banCMD);
         //
 
 
